@@ -1,7 +1,7 @@
-### Hi there 👋
+### Here is what I'm working On! 👋
 
 <!--
-**hugohiraoka/hugohiraoka** is a ✨ _special_ ✨ repository because its `README.md` (this file) appears on your GitHub profile.
+
 
 Here are some ideas to get you started:
 
@@ -13,4 +13,10 @@ Here are some ideas to get you started:
 - 📫 How to reach me: ...
 - 😄 Pronouns: ...
 - ⚡ Fun fact: ...
+
+I am reading:
+
+![](https://i.imgur.com/DDQ6sqz.jpg)
+
+
 -->
