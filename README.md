@@ -8,7 +8,7 @@ Here are some ideas to get you started:
 - 📫 How to reach me: hhiraokawatts@gmail.com
 - 😄 Pronouns: He/Him
 - I am reading:
-<img src="https://i.imgur.com/DDQ6sqz.jpg" width="100px"> 
+<img src="https://i.imgur.com/DDQ6sqz.jpg" width="240px"> 
 
 
 
