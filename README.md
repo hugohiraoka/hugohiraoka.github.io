@@ -1,22 +1,14 @@
 ### Here is what I'm working On! 👋
 
-<!--
-
 
 Here are some ideas to get you started:
 
-- 🔭 I’m currently working on ...
-- 🌱 I’m currently learning ...
-- 👯 I’m looking to collaborate on ...
-- 🤔 I’m looking for help with ...
-- 💬 Ask me about ...
-- 📫 How to reach me: ...
-- 😄 Pronouns: ...
-- ⚡ Fun fact: ...
-
-I am reading:
-
-![](https://i.imgur.com/DDQ6sqz.jpg)
+- 🔭 I’m currently working on : app to track vessels 
+- 👯 I’m looking to collaborate on any ML project
+- 📫 How to reach me: hhiraokawatts@gmail.com
+- 😄 Pronouns: He/Him
+- I am reading:
+<img src="https://i.imgur.com/DDQ6sqz.jpg" width="100px"> 
 
 
--->
+
