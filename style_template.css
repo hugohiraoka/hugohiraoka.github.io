@@ -1,0 +1,392 @@
+/* General body styling */
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+}
+
+/* Top navigation bar styling */
+.topnav {
+    background-color: #f6f8fa;
+    height: 80px;
+    display: flex;
+    align-items: center;
+    padding: 0 20px;
+}
+
+/* Logo styling */
+.topnav .logo {
+    margin-right: 20px;
+    cursor: pointer; /* Change cursor to pointer to indicate clickability */
+}
+
+/* User logo styling */
+.topnav .back-button {
+    margin-left: auto; /* Pushes the user logo to the right edge */
+    cursor: pointer; /* Change cursor to pointer to indicate clickability */
+}
+
+/* Text link styling */
+.topnav .text-link {
+    font-size: 16px;
+    text-decoration: none;
+    color: black;
+    margin-right: 5px;
+    transition: color 0.3s;
+}
+
+/* Hover effect for text links */
+.topnav .text-link:hover {
+    color: #0366d6;
+}
+
+/* Separator styling */
+.topnav .separator {
+    margin-right: 5px;
+    font-size: 16px;
+}
+
+/* Content area styling */
+.content {
+    padding: 20px;
+    /* Add more styles for your content area as needed */
+}
+
+.closebtn img {
+    cursor: pointer;
+}
+
+/* Side navigation menu styling */
+.sidenav {
+    height: 100%;
+    width: 0;
+    position: fixed;
+    z-index: 1;
+    top: 0;
+    left: 0;
+    background-color: #fff; /* Background color to white */
+    overflow-x: hidden;
+    transition: width 0.5s;
+    padding-top: 60px;
+    box-shadow: 2px 0 5px rgba(0,0,0,0.1); /* Optional: Add shadow for better visibility */
+    border-top-right-radius: 15px; /* Add rounded corners to the right top */
+    border-bottom-right-radius: 15px; /* Add rounded corners to the right bottom */
+}
+
+/* Container for the top row elements in sidenav */
+.sidenav .top-row {
+    position: absolute;
+    top: 20px;
+    left: 20px;
+    right: 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 30px;
+}
+
+/* GitHub image in sidenav */
+.sidenav .sidenav-github {
+    order: 1; /* Ensure this is the first item */
+    width: 40px; /* Changed width to 40px */
+    height: 40px; /* Changed height to 40px */
+}
+
+/* Close button styling */
+.sidenav .closebtn {
+    order: 2; /* Ensure this is the second item */
+}
+
+/* Menu option 1 group styling */
+.sidenav .menu-opt1-group {
+    margin-top: 20px !important; /* Distance from GitHub icon */
+    padding-left: 24px; /* Ensure menu_opt1_logo is 24px from left edge of sidenav */
+}
+
+/* Menu option 1 styling */
+.sidenav .menu-opt1 {
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+    color: #717982;
+    font-size: 16px; /* Changed font size to 16px */
+    padding: 7px 20px; /* Adjusted padding to decrease height by 3px from top and bottom */
+    transition: background-color 0.3s;
+    margin-right: 20px; /* Added margin-right for spacing from the right edge */
+    border-radius: 10px; /* Rounded corners for menu option */
+    line-height: 16px; /* Adjusted line height */
+
+}
+
+.sidenav .menu-opt1:hover {
+    background-color: #f6f7f8;
+}
+
+/* Menu option 1 logo */
+.sidenav .menu-opt1-logo {
+    width: 24px; /* Changed width to 24px */
+    height: 24px; /* Changed height to 24px */
+    margin-right: 10px;
+}
+
+/* Menu option 1 text */
+.sidenav .menu-opt1-txt {
+    font-size: 16px; /* Changed font size to 16px */
+    padding-top: 5px; /* Set 5px top padding */
+}
+
+/* Menu option 2 group styling */
+.sidenav .menu-opt2-group {
+    padding-left: 24px; /* Adjust padding as needed */
+    margin-top: 0; /* Removed margin-top */
+}
+
+/* Menu option 2 styling */
+.sidenav .menu-opt2 {
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+    color: #717982;
+    font-size: 16px; /* Font size same as menu-opt1-txt */
+    padding: 7px 20px; /* Adjusted padding to decrease height by 3px from top and bottom */
+    transition: background-color 0.3s;
+    margin-right: 20px; /* Added margin-right for spacing from the right edge */
+    border-radius: 10px; /* Rounded corners for menu option */
+    line-height: 16px; /* Adjusted line height */
+}
+
+.sidenav .menu-opt2:hover {
+    background-color: #f6f7f8;
+}
+
+/* Menu option 2 logo */
+.sidenav .menu-opt2-logo {
+    width: 24px; /* Changed width to 24px */
+    height: 24px; /* Changed height to 24px */
+    margin-right: 10px;
+}
+
+/* Menu option 2 text */
+.sidenav .menu-opt2-txt {
+    font-size: 16px; /* Same font size as menu-opt1-txt */
+    padding-top: 5px; /* Set same top padding as menu-opt1-txt */
+}
+
+/* Menu option 3 group styling */
+.sidenav .menu-opt3-group {
+    padding-left: 24px; /* Adjust padding as needed */
+    margin-top: 0px; /* Distance from previous menu option */
+}
+
+/* Menu option 3 styling */
+.sidenav .menu-opt3 {
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+    color: #717982;
+    font-size: 16px; /* Font size same as other menu options */
+    padding: 7px 20px; /* Adjusted padding to decrease height by 3px from top and bottom */
+    transition: background-color 0.3s;
+    margin-right: 20px; /* Added margin-right for spacing from the right edge */
+    border-radius: 10px; /* Rounded corners for menu option */
+    line-height: 16px; /* Adjusted line height */
+}
+
+.sidenav .menu-opt3:hover {
+    background-color: #f6f7f8;
+}
+
+/* Menu option 3 logo */
+.sidenav .menu-opt3-logo {
+    width: 24px; /* Changed width to 24px */
+    height: 24px; /* Changed height to 24px */
+    margin-right: 10px;
+}
+
+/* Menu option 3 text */
+.sidenav .menu-opt3-txt {
+    font-size: 16px; /* Same font size as other menu options */
+    padding-top: 5px; /* Set same top padding as other menu options */
+}
+
+/* Menu option 4 group styling */
+.sidenav .menu-opt4-group {
+    padding-left: 24px; /* Adjust padding as needed */
+    margin-top: 0; /* Removed margin-top */
+}
+
+/* Menu option 4 styling */
+.sidenav .menu-opt4 {
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+    color: #717982;
+    font-size: 16px; /* Font size same as other menu options */
+    padding: 7px 20px; /* Adjusted padding to decrease height by 3px from top and bottom */
+    transition: background-color 0.3s;
+    margin-right: 20px; /* Added margin-right for spacing from the right edge */
+    border-radius: 10px; /* Rounded corners for menu option */
+    line-height: 16px; /* Adjusted line height */
+}
+
+.sidenav .menu-opt4:hover {
+    background-color: #f6f7f8;
+}
+
+/* Menu option 4 logo */
+.sidenav .menu-opt4-logo {
+    width: 24px; /* Changed width to 24px */
+    height: 24px; /* Changed height to 24px */
+    margin-right: 10px;
+}
+
+/* Menu option 4 text */
+.sidenav .menu-opt4-txt {
+    font-size: 16px; /* Same font size as other menu options */
+    padding-top: 5px; /* Set same top padding as other menu options */
+}
+
+
+
+/* Adjust padding for menu-opt4-group */
+.sidenav .menu-opt5-group {
+    padding-left: 50px;
+    padding-bottom: 20px;
+    margin-bottom: 10px;
+}
+
+/** Repositories **/
+
+.repositories-list {
+    margin-left: 20px;
+    margin-right: 20px;
+    padding: 0; /* Remove default padding */
+    list-style-type: none; /* Remove default list styles */
+
+    /* Ensure consistent alignment and row height with menu-opt2 */
+    display: flex;
+    flex-direction: column;
+}
+
+.repositories-list li {
+    ddisplay: flex;
+    align-items: center;
+    padding: 7px 20px; /* Match padding of menu-opt2 */
+    border-radius: 10px; /* Match rounded corners of menu-opt2 */
+    margin-bottom: 15px; /* Match vertical spacing */
+
+    /* Match font size and color */
+    font-size: 16px;
+    color: #717982;
+}
+
+.repositories-list li img {
+  width: 30px; /* Adjust image size if needed */
+  height: 30px;
+  margin-right: 10px;
+}
+
+.repositories-list li:hover {
+    background-color: #f6f7f8; /* Match hover background color */
+}
+
+.repositories-list li:hover .repo-item {
+    color: #333; /* Adjust text color on hover */
+}
+
+/* Optional: Adjust padding and margins if needed */
+.repositories-list .repo-item {
+    flex: 1; /* Ensure items stretch vertically */
+}
+
+.repositories-list .repo-item a {
+    text-decoration: none; /* Remove underline */
+    color: inherit; /* Inherit text color */
+    display: flex;
+    align-items: center;
+    line-height: 1.5; /* Ensure vertical alignment */
+}
+
+
+
+/*.repositories .repo-item img {
+    width: 30px;
+    height: 30px;
+    margin-right: 10px;
+    vertical-align: middle;
+}
+
+/* Style for the repository item text */
+/*.repositories .repo-item span {
+    font-size: 16px;
+    cursor: pointer;
+    color: #717982;
+    vertical-align: middle;
+}*/
+/*
+.repositories-list li:hover {
+    background-color: #f6f7f8; /* Match hover background color */
+/*}
+
+.repositories-list li:hover .repo-item {
+    color: #333; /* Adjust text color on hover */
+/*}
+
+/* Optional: Adjust padding and margins if needed */
+/*.repositories-list .repo-item {
+    flex: 1; /* Ensure items stretch vertically */
+/*}
+
+.repositories-list .repo-item a {
+    text-decoration: none; /* Remove underline */
+/*    color: inherit; /* Inherit text color */
+/*    display: flex;
+    align-items: center;
+    line-height: 1.5; /* Ensure vertical alignment */
+/*}
+/* End Repositores style */
+
+
+
+/* Scroll to top button styling */
+.scroll-to-top {
+    display: none; /* Hide by default */
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    width: 40px;
+    height: 40px;
+    background-color: #0366d6;
+    color: white;
+    font-size: 24px;
+    line-height: 40px;
+    text-align: center;
+    border-radius: 50%;
+    cursor: pointer;
+    box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3);
+    transition: opacity 0.3s;
+}
+
+.scroll-to-top:hover {
+    opacity: 0.8;
+}
+
+
+/* Styling for the divider line between menu options */
+.menu-divider {
+    height: 1px;
+    background-color: #ccc; /* You can change this color as needed */
+    margin: 20px 0; /* 20px margin above and below */
+}
+
+/* Adjustments for menu options above and below the divider */
+.sidenav .menu-opt1-group, .sidenav .menu-opt2-group {
+    padding-left: 24px; /* Ensure consistency in padding */
+    margin-top: 0; /* Reset any additional margins */
+}
+
+/* CSS for hover effect on li entries */
+       .hovered {
+           background-color: #f6f7f8; /* Example background color on hover */
+           color: #333; /* Example text color on hover */
+           /* Add any other styles for hover effect */
+       }

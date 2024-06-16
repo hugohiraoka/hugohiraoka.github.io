@@ -1,0 +1,373 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Classifying SPAM Email using BERT</title>
+    <link rel="icon" type="image/png" href="https://i.imgur.com/IUThkpz.png">
+    <link rel="stylesheet" href="style_template.css">
+    <link rel="stylesheet" href="style_jp_root.css">
+    <link rel="stylesheet" href="style_jp_nb.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.1.10/require.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS_CHTML-full,Safe"> </script>
+    <script src="template.js"></script>
+    <script src="jpnb.js"></script>
+
+</head>
+
+<body>
+
+<div class="topnav">
+    <div class="logo" onclick="openNav()">
+        <img src="https://i.imgur.com/5QTyC8t.png" alt="sandwich menu logo" width="40" height="40">
+    </div>
+    <a href="https://github.com/hugohiraoka" class="logo">
+        <img src="https://i.imgur.com/wZhK0QJ.png" alt="github logo" width="40" height="40">
+    </a>
+    <a href="#" class="text-link">Link_Main_Page</a>
+    <span class="separator">/</span>
+    <a href="#" class="text-link">notebookname</a>
+
+    <!-- **************************************************************************************** -->
+    <!-- Enter the link below -->
+    <a href="https://sites.google.com/view/hugohiraoka" class="back-button">
+        <img src="https://i.imgur.com/HhU31Y0.png" alt="back-button" width="40" height="40"
+            onmouseover="this.src='https://i.imgur.com/Su7T8l5.png'"
+            onmouseout="this.src='https://i.imgur.com/HhU31Y0.png'">
+    </a>
+</div>
+
+<div id="mySidenav" class="sidenav">
+    <div class="top-row">
+        <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">
+            <img src="https://i.imgur.com/RwoiHv7.png" alt="close button" width="40" height="40"
+                 onmouseover="this.src='https://i.imgur.com/4j71j92.png'"
+                 onmouseout="this.src='https://i.imgur.com/RwoiHv7.png'">
+        </a>
+        <a href="https://github.com/hugohiraoka" class="sidenav-github">
+            <img src="https://i.imgur.com/wZhK0QJ.png" alt="github logo" width="40" height="40">
+        </a>
+    </div>
+
+    <div class="menu-opt1-group">
+        <a href="https://github.com/hugohiraoka" class="menu-opt1">
+            <img src="https://i.imgur.com/lYqE3UX.png" alt="menu option 1 logo" width="30" height="30" class="menu-opt1-logo">
+            <span class="menu-opt1-txt">Home</span>
+        </a>
+    </div>
+
+    <div class="menu-opt2-group">
+        <a href="https://github.com/hugohiraoka?tab=repositories" class="menu-opt2">
+            <img src="https://i.imgur.com/DLN6L4t.png" alt="menu option 2 logo" width="30" height="30" class="menu-opt2-logo">
+            <span class="menu-opt2-txt">My Repositories</span>
+        </a>
+    </div>
+
+
+<div class="menu-opt3-group">
+    <a href="https://sites.google.com/view/hugohiraoka/portfolio?authuser=0" class="menu-opt3">
+        <img src="https://i.imgur.com/y32xVjU.png" alt="menu option 3 logo" width="24" height="24" class="menu-opt3-logo">
+        <span class="menu-opt3-txt">Portfolio</span>
+    </a>
+</div>
+
+<div class="menu-opt4-group">
+    <a href="https://sites.google.com/view/hugohiraoka/website?authuser=0" class="menu-opt4">
+        <img src="https://i.imgur.com/YtgrvDy.png" alt="menu option 4 logo" width="24" height="24" class="menu-opt4-logo">
+        <span class="menu-opt4-txt">Bio</span>
+    </a>
+</div>
+
+<!-- Divider Line -->
+<div class="menu-divider"></div>
+
+<div class="menu-opt5-group">
+     <a href="#" class="menu-opt5">
+         <span class="menu-repository-txt">List of Repositories</span>
+     </a>
+</div>
+
+<div>
+     <div class="repositories">
+       <ul id="repositories-list">
+         <!-- This is where dynamic content will be added -->
+       </ul>
+     </div>
+ </div>
+
+<div id="repositories">
+<!-- Repositories -->
+</div>
+
+
+
+
+</div>
+
+<!-- ENTER CONTENT BELOW -->
+
+<div class="content">
+
+  <div class="jp-Notebook" data-jp-theme-light="true" data-jp-theme-name="JupyterLab Light">
+
+  <div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+  <div class="jp-Cell-inputWrapper">
+  <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+  </div>
+  <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+  </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
+  <h1 id="A-model-to-classify-spam-Email-using-BERT"><strong>A model to classify spam Email using BERT</strong><a class="anchor-link" href="#A-model-to-classify-spam-Email-using-BERT">&#182;</a></h1>
+  </div>
+  </div>
+  </div>
+  </div>
+  <div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+  <div class="jp-Cell-inputWrapper">
+  <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+  </div>
+  <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+  </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
+  <p>Hugo Hiraoka &gt; hhiraokawatts@gmail.com</p>
+
+  </div>
+  </div>
+  </div>
+  </div>
+  <div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+  <div class="jp-Cell-inputWrapper">
+  <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+  </div>
+  <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+  </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
+  <p><strong>From Cisco:</strong>
+  Spam email is unsolicited and unwanted junk email sent out in bulk to an indiscriminate recipient list. Typically, spam is sent for commercial purposes. It can be sent in massive volume by botnets, networks of infected computers.</p>
+  <p><img src="https://i.imgur.com/uu13RAq.jpg" alt="Spam Email"></p>
+  <p><strong>Why do people send out spam email?</strong>
+  Often, spam email is sent for commercial purposes. While some people view it as unethical, many businesses still use spam. The cost per email is incredibly low, and businesses can send out mass quantities consistently. Spam email can also be a malicious attempt to gain access to your computer.</p>
+  <p><strong>Is spam email dangerous?</strong>
+  Spam email can be dangerous. It can include malicious links that can infect your computer with malware. Do not click links in spam. Dangerous spam emails often sound urgent, so you feel the need to act. Keep reading to learn about some of the basic spam types.</p>
+  <p><strong>How do you deploy anti-spam tactics?</strong>
+  Spam email can be difficult to stop, as it can be sent from botnets. Botnets are a network of previously infected computers. As a result, the original spammer can be difficult to trace and stop.</p>
+  <p>If you receive a message that appears to be spam--for example, if you don’t recognize the sender--mark the message as spam in your email application. Don't click any links or attached files, including opt-out or unsubscribe links. Spammers sometimes include these links to confirm that your email address is legitimate, or the links may trigger malicious webpages or downloads.</p>
+  <p>Anti-spam solutions should address a wide range of known threats beyond spam, phishing and botnet attacks that include hard-to-detect short-lived and low volume email threats.</p>
+  <p>In this notebook, we develop a spam email classification model using TensorFlow.</p>
+
+  </div>
+  </div>
+  </div>
+  </div>
+  <div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+  <div class="jp-Cell-inputWrapper">
+  <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+  </div>
+  <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+  </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
+  <h3 id="What-is-Bert?"><strong>What is Bert?</strong><a class="anchor-link" href="#What-is-Bert?">&#182;</a></h3><p>BERT is a model for natural language processing developed by Google that learns bi-directional representations of text to significantly improve contextual understanding of unlabeled text across many different tasks.</p>
+  <p>It’s the basis for an entire family of BERT-like models such as RoBERTa, ALBERT, and DistilBERT.</p>
+  <p>BERT can be fine-tuned for many NLP tasks. It’s ideal for language understanding tasks like translation, Q&amp;A, sentiment analysis, and sentence classification.</p>
+
+  </div>
+  </div>
+  </div>
+  </div>
+  <div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+  <div class="jp-Cell-inputWrapper">
+  <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+  </div>
+  <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+  </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
+  <h2 id="Libraries"><strong>Libraries</strong><a class="anchor-link" href="#Libraries">&#182;</a></h2>
+  </div>
+  </div>
+  </div>
+  </div><div class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
+  <div class="jp-Cell-inputWrapper">
+  <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+  </div>
+  <div class="jp-InputArea jp-Cell-inputArea">
+  <div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[&nbsp;]:</div>
+  <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+       <div class="CodeMirror cm-s-jupyter">
+  <div class=" highlight hl-ipython3"><pre><span></span><span class="c1">#install tensorflow</span>
+  <span class="o">!</span>pip<span class="w"> </span>install<span class="w"> </span><span class="nv">tensorflow</span><span class="o">==</span><span class="m">2</span>.9.0
+  </pre></div>
+
+       </div>
+  </div>
+  </div>
+  </div>
+
+  <div class="jp-Cell-outputWrapper">
+  <div class="jp-Collapser jp-OutputCollapser jp-Cell-outputCollapser">
+  </div>
+
+
+  <div class="jp-OutputArea jp-Cell-outputArea">
+
+  <div class="jp-OutputArea-child">
+
+
+  <div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
+
+
+  <div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain">
+  <pre>Requirement already satisfied: tensorflow==2.9.0 in /usr/local/lib/python3.10/dist-packages (2.9.0)
+  Requirement already satisfied: absl-py&gt;=1.0.0 in /usr/local/lib/python3.10/dist-packages (from tensorflow==2.9.0) (1.4.0)
+  Requirement already satisfied: astunparse&gt;=1.6.0 in /usr/local/lib/python3.10/dist-packages (from tensorflow==2.9.0) (1.6.3)
+  Requirement already satisfied: flatbuffers&lt;2,&gt;=1.12 in /usr/local/lib/python3.10/dist-packages (from tensorflow==2.9.0) (1.12)
+  Requirement already satisfied: gast&lt;=0.4.0,&gt;=0.2.1 in /usr/local/lib/python3.10/dist-packages (from tensorflow==2.9.0) (0.4.0)
+  Requirement already satisfied: google-pasta&gt;=0.1.1 in /usr/local/lib/python3.10/dist-packages (from tensorflow==2.9.0) (0.2.0)
+  Requirement already satisfied: grpcio&lt;2.0,&gt;=1.24.3 in /usr/local/lib/python3.10/dist-packages (from tensorflow==2.9.0) (1.64.1)
+  Requirement already satisfied: h5py&gt;=2.9.0 in /usr/local/lib/python3.10/dist-packages (from tensorflow==2.9.0) (3.9.0)
+  Requirement already satisfied: keras&lt;2.10.0,&gt;=2.9.0rc0 in /usr/local/lib/python3.10/dist-packages (from tensorflow==2.9.0) (2.9.0)
+  Requirement already satisfied: keras-preprocessing&gt;=1.1.1 in /usr/local/lib/python3.10/dist-packages (from tensorflow==2.9.0) (1.1.2)
+  Requirement already satisfied: libclang&gt;=13.0.0 in /usr/local/lib/python3.10/dist-packages (from tensorflow==2.9.0) (18.1.1)
+  Requirement already satisfied: numpy&gt;=1.20 in /usr/local/lib/python3.10/dist-packages (from tensorflow==2.9.0) (1.25.2)
+  Requirement already satisfied: opt-einsum&gt;=2.3.2 in /usr/local/lib/python3.10/dist-packages (from tensorflow==2.9.0) (3.3.0)
+  Requirement already satisfied: packaging in /usr/local/lib/python3.10/dist-packages (from tensorflow==2.9.0) (24.1)
+  Requirement already satisfied: protobuf&gt;=3.9.2 in /usr/local/lib/python3.10/dist-packages (from tensorflow==2.9.0) (3.19.6)
+  Requirement already satisfied: setuptools in /usr/local/lib/python3.10/dist-packages (from tensorflow==2.9.0) (67.7.2)
+  Requirement already satisfied: six&gt;=1.12.0 in /usr/local/lib/python3.10/dist-packages (from tensorflow==2.9.0) (1.16.0)
+  Requirement already satisfied: tensorboard&lt;2.10,&gt;=2.9 in /usr/local/lib/python3.10/dist-packages (from tensorflow==2.9.0) (2.9.1)
+  Requirement already satisfied: tensorflow-io-gcs-filesystem&gt;=0.23.1 in /usr/local/lib/python3.10/dist-packages (from tensorflow==2.9.0) (0.37.0)
+  Requirement already satisfied: tensorflow-estimator&lt;2.10.0,&gt;=2.9.0rc0 in /usr/local/lib/python3.10/dist-packages (from tensorflow==2.9.0) (2.9.0)
+  Requirement already satisfied: termcolor&gt;=1.1.0 in /usr/local/lib/python3.10/dist-packages (from tensorflow==2.9.0) (2.4.0)
+  Requirement already satisfied: typing-extensions&gt;=3.6.6 in /usr/local/lib/python3.10/dist-packages (from tensorflow==2.9.0) (4.12.2)
+  Requirement already satisfied: wrapt&gt;=1.11.0 in /usr/local/lib/python3.10/dist-packages (from tensorflow==2.9.0) (1.14.1)
+  Requirement already satisfied: wheel&lt;1.0,&gt;=0.23.0 in /usr/local/lib/python3.10/dist-packages (from astunparse&gt;=1.6.0-&gt;tensorflow==2.9.0) (0.43.0)
+  Requirement already satisfied: google-auth&lt;3,&gt;=1.6.3 in /usr/local/lib/python3.10/dist-packages (from tensorboard&lt;2.10,&gt;=2.9-&gt;tensorflow==2.9.0) (2.27.0)
+  Requirement already satisfied: google-auth-oauthlib&lt;0.5,&gt;=0.4.1 in /usr/local/lib/python3.10/dist-packages (from tensorboard&lt;2.10,&gt;=2.9-&gt;tensorflow==2.9.0) (0.4.6)
+  Requirement already satisfied: markdown&gt;=2.6.8 in /usr/local/lib/python3.10/dist-packages (from tensorboard&lt;2.10,&gt;=2.9-&gt;tensorflow==2.9.0) (3.6)
+  Requirement already satisfied: requests&lt;3,&gt;=2.21.0 in /usr/local/lib/python3.10/dist-packages (from tensorboard&lt;2.10,&gt;=2.9-&gt;tensorflow==2.9.0) (2.31.0)
+  Requirement already satisfied: tensorboard-data-server&lt;0.7.0,&gt;=0.6.0 in /usr/local/lib/python3.10/dist-packages (from tensorboard&lt;2.10,&gt;=2.9-&gt;tensorflow==2.9.0) (0.6.1)
+  Requirement already satisfied: tensorboard-plugin-wit&gt;=1.6.0 in /usr/local/lib/python3.10/dist-packages (from tensorboard&lt;2.10,&gt;=2.9-&gt;tensorflow==2.9.0) (1.8.1)
+  Requirement already satisfied: werkzeug&gt;=1.0.1 in /usr/local/lib/python3.10/dist-packages (from tensorboard&lt;2.10,&gt;=2.9-&gt;tensorflow==2.9.0) (3.0.3)
+  Requirement already satisfied: cachetools&lt;6.0,&gt;=2.0.0 in /usr/local/lib/python3.10/dist-packages (from google-auth&lt;3,&gt;=1.6.3-&gt;tensorboard&lt;2.10,&gt;=2.9-&gt;tensorflow==2.9.0) (5.3.3)
+  Requirement already satisfied: pyasn1-modules&gt;=0.2.1 in /usr/local/lib/python3.10/dist-packages (from google-auth&lt;3,&gt;=1.6.3-&gt;tensorboard&lt;2.10,&gt;=2.9-&gt;tensorflow==2.9.0) (0.4.0)
+  Requirement already satisfied: rsa&lt;5,&gt;=3.1.4 in /usr/local/lib/python3.10/dist-packages (from google-auth&lt;3,&gt;=1.6.3-&gt;tensorboard&lt;2.10,&gt;=2.9-&gt;tensorflow==2.9.0) (4.9)
+  Requirement already satisfied: requests-oauthlib&gt;=0.7.0 in /usr/local/lib/python3.10/dist-packages (from google-auth-oauthlib&lt;0.5,&gt;=0.4.1-&gt;tensorboard&lt;2.10,&gt;=2.9-&gt;tensorflow==2.9.0) (1.3.1)
+  Requirement already satisfied: charset-normalizer&lt;4,&gt;=2 in /usr/local/lib/python3.10/dist-packages (from requests&lt;3,&gt;=2.21.0-&gt;tensorboard&lt;2.10,&gt;=2.9-&gt;tensorflow==2.9.0) (3.3.2)
+  Requirement already satisfied: idna&lt;4,&gt;=2.5 in /usr/local/lib/python3.10/dist-packages (from requests&lt;3,&gt;=2.21.0-&gt;tensorboard&lt;2.10,&gt;=2.9-&gt;tensorflow==2.9.0) (3.7)
+  Requirement already satisfied: urllib3&lt;3,&gt;=1.21.1 in /usr/local/lib/python3.10/dist-packages (from requests&lt;3,&gt;=2.21.0-&gt;tensorboard&lt;2.10,&gt;=2.9-&gt;tensorflow==2.9.0) (2.0.7)
+  Requirement already satisfied: certifi&gt;=2017.4.17 in /usr/local/lib/python3.10/dist-packages (from requests&lt;3,&gt;=2.21.0-&gt;tensorboard&lt;2.10,&gt;=2.9-&gt;tensorflow==2.9.0) (2024.6.2)
+  Requirement already satisfied: MarkupSafe&gt;=2.1.1 in /usr/local/lib/python3.10/dist-packages (from werkzeug&gt;=1.0.1-&gt;tensorboard&lt;2.10,&gt;=2.9-&gt;tensorflow==2.9.0) (2.1.5)
+  Requirement already satisfied: pyasn1&lt;0.7.0,&gt;=0.4.6 in /usr/local/lib/python3.10/dist-packages (from pyasn1-modules&gt;=0.2.1-&gt;google-auth&lt;3,&gt;=1.6.3-&gt;tensorboard&lt;2.10,&gt;=2.9-&gt;tensorflow==2.9.0) (0.6.0)
+  Requirement already satisfied: oauthlib&gt;=3.0.0 in /usr/local/lib/python3.10/dist-packages (from requests-oauthlib&gt;=0.7.0-&gt;google-auth-oauthlib&lt;0.5,&gt;=0.4.1-&gt;tensorboard&lt;2.10,&gt;=2.9-&gt;tensorflow==2.9.0) (3.2.2)
+  </pre>
+  </div>
+  </div>
+
+  </div>
+
+  </div>
+
+  </div><div class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
+  <div class="jp-Cell-inputWrapper">
+  <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+  </div>
+  <div class="jp-InputArea jp-Cell-inputArea">
+  <div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[&nbsp;]:</div>
+  <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+       <div class="CodeMirror cm-s-jupyter">
+  <div class=" highlight hl-ipython3"><pre><span></span><span class="o">%</span><span class="k">pip</span> install tensorflow_text==2.9.0
+  </pre></div>
+
+       </div>
+  </div>
+  </div>
+  </div>
+
+  <div class="jp-Cell-outputWrapper">
+  <div class="jp-Collapser jp-OutputCollapser jp-Cell-outputCollapser">
+  </div>
+
+
+  <div class="jp-OutputArea jp-Cell-outputArea">
+
+  <div class="jp-OutputArea-child">
+
+
+      <div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
+
+
+  <div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain">
+  <pre>Collecting tensorflow_text==2.9.0
+    Using cached tensorflow_text-2.9.0-cp310-cp310-manylinux_2_17_x86_64.manylinux2014_x86_64.whl (4.6 MB)
+  Requirement already satisfied: tensorflow-hub&gt;=0.8.0 in /usr/local/lib/python3.10/dist-packages (from tensorflow_text==2.9.0) (0.16.1)
+  Requirement already satisfied: tensorflow&lt;2.10,&gt;=2.9.0 in /usr/local/lib/python3.10/dist-packages (from tensorflow_text==2.9.0) (2.9.0)
+  Requirement already satisfied: absl-py&gt;=1.0.0 in /usr/local/lib/python3.10/dist-packages (from tensorflow&lt;2.10,&gt;=2.9.0-&gt;tensorflow_text==2.9.0) (1.4.0)
+  Requirement already satisfied: astunparse&gt;=1.6.0 in /usr/local/lib/python3.10/dist-packages (from tensorflow&lt;2.10,&gt;=2.9.0-&gt;tensorflow_text==2.9.0) (1.6.3)
+  Requirement already satisfied: flatbuffers&lt;2,&gt;=1.12 in /usr/local/lib/python3.10/dist-packages (from tensorflow&lt;2.10,&gt;=2.9.0-&gt;tensorflow_text==2.9.0) (1.12)
+  Requirement already satisfied: gast&lt;=0.4.0,&gt;=0.2.1 in /usr/local/lib/python3.10/dist-packages (from tensorflow&lt;2.10,&gt;=2.9.0-&gt;tensorflow_text==2.9.0) (0.4.0)
+  Requirement already satisfied: google-pasta&gt;=0.1.1 in /usr/local/lib/python3.10/dist-packages (from tensorflow&lt;2.10,&gt;=2.9.0-&gt;tensorflow_text==2.9.0) (0.2.0)
+  Requirement already satisfied: grpcio&lt;2.0,&gt;=1.24.3 in /usr/local/lib/python3.10/dist-packages (from tensorflow&lt;2.10,&gt;=2.9.0-&gt;tensorflow_text==2.9.0) (1.64.1)
+  Requirement already satisfied: h5py&gt;=2.9.0 in /usr/local/lib/python3.10/dist-packages (from tensorflow&lt;2.10,&gt;=2.9.0-&gt;tensorflow_text==2.9.0) (3.9.0)
+  Requirement already satisfied: keras&lt;2.10.0,&gt;=2.9.0rc0 in /usr/local/lib/python3.10/dist-packages (from tensorflow&lt;2.10,&gt;=2.9.0-&gt;tensorflow_text==2.9.0) (2.9.0)
+  Requirement already satisfied: keras-preprocessing&gt;=1.1.1 in /usr/local/lib/python3.10/dist-packages (from tensorflow&lt;2.10,&gt;=2.9.0-&gt;tensorflow_text==2.9.0) (1.1.2)
+  Requirement already satisfied: libclang&gt;=13.0.0 in /usr/local/lib/python3.10/dist-packages (from tensorflow&lt;2.10,&gt;=2.9.0-&gt;tensorflow_text==2.9.0) (18.1.1)
+  Requirement already satisfied: numpy&gt;=1.20 in /usr/local/lib/python3.10/dist-packages (from tensorflow&lt;2.10,&gt;=2.9.0-&gt;tensorflow_text==2.9.0) (1.25.2)
+  Requirement already satisfied: opt-einsum&gt;=2.3.2 in /usr/local/lib/python3.10/dist-packages (from tensorflow&lt;2.10,&gt;=2.9.0-&gt;tensorflow_text==2.9.0) (3.3.0)
+  Requirement already satisfied: packaging in /usr/local/lib/python3.10/dist-packages (from tensorflow&lt;2.10,&gt;=2.9.0-&gt;tensorflow_text==2.9.0) (24.1)
+  Requirement already satisfied: protobuf&gt;=3.9.2 in /usr/local/lib/python3.10/dist-packages (from tensorflow&lt;2.10,&gt;=2.9.0-&gt;tensorflow_text==2.9.0) (3.19.6)
+  Requirement already satisfied: setuptools in /usr/local/lib/python3.10/dist-packages (from tensorflow&lt;2.10,&gt;=2.9.0-&gt;tensorflow_text==2.9.0) (67.7.2)
+  Requirement already satisfied: six&gt;=1.12.0 in /usr/local/lib/python3.10/dist-packages (from tensorflow&lt;2.10,&gt;=2.9.0-&gt;tensorflow_text==2.9.0) (1.16.0)
+  Requirement already satisfied: tensorboard&lt;2.10,&gt;=2.9 in /usr/local/lib/python3.10/dist-packages (from tensorflow&lt;2.10,&gt;=2.9.0-&gt;tensorflow_text==2.9.0) (2.9.1)
+  Requirement already satisfied: tensorflow-io-gcs-filesystem&gt;=0.23.1 in /usr/local/lib/python3.10/dist-packages (from tensorflow&lt;2.10,&gt;=2.9.0-&gt;tensorflow_text==2.9.0) (0.37.0)
+  Requirement already satisfied: tensorflow-estimator&lt;2.10.0,&gt;=2.9.0rc0 in /usr/local/lib/python3.10/dist-packages (from tensorflow&lt;2.10,&gt;=2.9.0-&gt;tensorflow_text==2.9.0) (2.9.0)
+  Requirement already satisfied: termcolor&gt;=1.1.0 in /usr/local/lib/python3.10/dist-packages (from tensorflow&lt;2.10,&gt;=2.9.0-&gt;tensorflow_text==2.9.0) (2.4.0)
+  Requirement already satisfied: typing-extensions&gt;=3.6.6 in /usr/local/lib/python3.10/dist-packages (from tensorflow&lt;2.10,&gt;=2.9.0-&gt;tensorflow_text==2.9.0) (4.12.2)
+  Requirement already satisfied: wrapt&gt;=1.11.0 in /usr/local/lib/python3.10/dist-packages (from tensorflow&lt;2.10,&gt;=2.9.0-&gt;tensorflow_text==2.9.0) (1.14.1)
+  Requirement already satisfied: tf-keras&gt;=2.14.1 in /usr/local/lib/python3.10/dist-packages (from tensorflow-hub&gt;=0.8.0-&gt;tensorflow_text==2.9.0) (2.15.1)
+  Requirement already satisfied: wheel&lt;1.0,&gt;=0.23.0 in /usr/local/lib/python3.10/dist-packages (from astunparse&gt;=1.6.0-&gt;tensorflow&lt;2.10,&gt;=2.9.0-&gt;tensorflow_text==2.9.0) (0.43.0)
+  Requirement already satisfied: google-auth&lt;3,&gt;=1.6.3 in /usr/local/lib/python3.10/dist-packages (from tensorboard&lt;2.10,&gt;=2.9-&gt;tensorflow&lt;2.10,&gt;=2.9.0-&gt;tensorflow_text==2.9.0) (2.27.0)
+  Requirement already satisfied: google-auth-oauthlib&lt;0.5,&gt;=0.4.1 in /usr/local/lib/python3.10/dist-packages (from tensorboard&lt;2.10,&gt;=2.9-&gt;tensorflow&lt;2.10,&gt;=2.9.0-&gt;tensorflow_text==2.9.0) (0.4.6)
+  Requirement already satisfied: markdown&gt;=2.6.8 in /usr/local/lib/python3.10/dist-packages (from tensorboard&lt;2.10,&gt;=2.9-&gt;tensorflow&lt;2.10,&gt;=2.9.0-&gt;tensorflow_text==2.9.0) (3.6)
+  Requirement already satisfied: requests&lt;3,&gt;=2.21.0 in /usr/local/lib/python3.10/dist-packages (from tensorboard&lt;2.10,&gt;=2.9-&gt;tensorflow&lt;2.10,&gt;=2.9.0-&gt;tensorflow_text==2.9.0) (2.31.0)
+  Requirement already satisfied: tensorboard-data-server&lt;0.7.0,&gt;=0.6.0 in /usr/local/lib/python3.10/dist-packages (from tensorboard&lt;2.10,&gt;=2.9-&gt;tensorflow&lt;2.10,&gt;=2.9.0-&gt;tensorflow_text==2.9.0) (0.6.1)
+  Requirement already satisfied: tensorboard-plugin-wit&gt;=1.6.0 in /usr/local/lib/python3.10/dist-packages (from tensorboard&lt;2.10,&gt;=2.9-&gt;tensorflow&lt;2.10,&gt;=2.9.0-&gt;tensorflow_text==2.9.0) (1.8.1)
+  Requirement already satisfied: werkzeug&gt;=1.0.1 in /usr/local/lib/python3.10/dist-packages (from tensorboard&lt;2.10,&gt;=2.9-&gt;tensorflow&lt;2.10,&gt;=2.9.0-&gt;tensorflow_text==2.9.0) (3.0.3)
+  INFO: pip is looking at multiple versions of tf-keras to determine which version is compatible with other requirements. This could take a while.
+  Collecting tf-keras&gt;=2.14.1 (from tensorflow-hub&gt;=0.8.0-&gt;tensorflow_text==2.9.0)
+    Downloading tf_keras-2.16.0-py3-none-any.whl (1.7 MB)
+       <span class="ansi-black-intense-fg">━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━</span> <span class="ansi-green-fg">1.7/1.7 MB</span> <span class="ansi-red-fg">14.6 MB/s</span> eta <span class="ansi-cyan-fg">0:00:00</span>
+    Downloading tf_keras-2.15.0-py3-none-any.whl (1.7 MB)
+       <span class="ansi-black-intense-fg">━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━</span> <span class="ansi-green-fg">1.7/1.7 MB</span> <span class="ansi-red-fg">28.0 MB/s</span> eta <span class="ansi-cyan-fg">0:00:00</span>
+  Requirement already satisfied: cachetools&lt;6.0,&gt;=2.0.0 in /usr/local/lib/python3.10/dist-packages (from google-auth&lt;3,&gt;=1.6.3-&gt;tensorboard&lt;2.10,&gt;=2.9-&gt;tensorflow&lt;2.10,&gt;=2.9.0-&gt;tensorflow_text==2.9.0) (5.3.3)
+  Requirement already satisfied: pyasn1-modules&gt;=0.2.1 in /usr/local/lib/python3.10/dist-packages (from google-auth&lt;3,&gt;=1.6.3-&gt;tensorboard&lt;2.10,&gt;=2.9-&gt;tensorflow&lt;2.10,&gt;=2.9.0-&gt;tensorflow_text==2.9.0) (0.4.0)
+  Requirement already satisfied: rsa&lt;5,&gt;=3.1.4 in /usr/local/lib/python3.10/dist-packages (from google-auth&lt;3,&gt;=1.6.3-&gt;tensorboard&lt;2.10,&gt;=2.9-&gt;tensorflow&lt;2.10,&gt;=2.9.0-&gt;tensorflow_text==2.9.0) (4.9)
+  Requirement already satisfied: requests-oauthlib&gt;=0.7.0 in /usr/local/lib/python3.10/dist-packages (from google-auth-oauthlib&lt;0.5,&gt;=0.4.1-&gt;tensorboard&lt;2.10,&gt;=2.9-&gt;tensorflow&lt;2.10,&gt;=2.9.0-&gt;tensorflow_text==2.9.0) (1.3.1)
+  Requirement already satisfied: charset-normalizer&lt;4,&gt;=2 in /usr/local/lib/python3.10/dist-packages (from requests&lt;3,&gt;=2.21.0-&gt;tensorboard&lt;2.10,&gt;=2.9-&gt;tensorflow&lt;2.10,&gt;=2.9.0-&gt;tensorflow_text==2.9.0) (3.3.2)
+  Requirement already satisfied: idna&lt;4,&gt;=2.5 in /usr/local/lib/python3.10/dist-packages (from requests&lt;3,&gt;=2.21.0-&gt;tensorboard&lt;2.10,&gt;=2.9-&gt;tensorflow&lt;2.10,&gt;=2.9.0-&gt;tensorflow_text==2.9.0) (3.7)
+  Requirement already satisfied: urllib3&lt;3,&gt;=1.21.1 in /usr/local/lib/python3.10/dist-packages (from requests&lt;3,&gt;=2.21.0-&gt;tensorboard&lt;2.10,&gt;=2.9-&gt;tensorflow&lt;2.10,&gt;=2.9.0-&gt;tensorflow_text==2.9.0) (2.0.7)
+  Requirement already satisfied: certifi&gt;=2017.4.17 in /usr/local/lib/python3.10/dist-packages (from requests&lt;3,&gt;=2.21.0-&gt;tensorboard&lt;2.10,&gt;=2.9-&gt;tensorflow&lt;2.10,&gt;=2.9.0-&gt;tensorflow_text==2.9.0) (2024.6.2)
+  Requirement already satisfied: MarkupSafe&gt;=2.1.1 in /usr/local/lib/python3.10/dist-packages (from werkzeug&gt;=1.0.1-&gt;tensorboard&lt;2.10,&gt;=2.9-&gt;tensorflow&lt;2.10,&gt;=2.9.0-&gt;tensorflow_text==2.9.0) (2.1.5)
+  Requirement already satisfied: pyasn1&lt;0.7.0,&gt;=0.4.6 in /usr/local/lib/python3.10/dist-packages (from pyasn1-modules&gt;=0.2.1-&gt;google-auth&lt;3,&gt;=1.6.3-&gt;tensorboard&lt;2.10,&gt;=2.9-&gt;tensorflow&lt;2.10,&gt;=2.9.0-&gt;tensorflow_text==2.9.0) (0.6.0)
+  Requirement already satisfied: oauthlib&gt;=3.0.0 in /usr/local/lib/python3.10/dist-packages (from requests-oauthlib&gt;=0.7.0-&gt;google-auth-oauthlib&lt;0.5,&gt;=0.4.1-&gt;tensorboard&lt;2.10,&gt;=2.9-&gt;tensorflow&lt;2.10,&gt;=2.9.0-&gt;tensorflow_text==2.9.0) (3.2.2)
+  Installing collected packages: tf-keras, tensorflow_text
+    Attempting uninstall: tf-keras
+      Found existing installation: tf_keras 2.15.1
+      Uninstalling tf_keras-2.15.1:
+        Successfully uninstalled tf_keras-2.15.1
+  Successfully installed tensorflow_text-2.9.0 tf-keras-2.15.0
+  </pre>
+  </div>
+  </div>
+
+  </div>
+
+  </div>
+
+  </div>
+  </div>
+  </div>
+
+
+  <div id="scrollToTop" class="scroll-to-top">
+          ↑
+  </div>
+
+
+
+
+</body>
+</html>
