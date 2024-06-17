@@ -34,13 +34,77 @@ document.addEventListener("DOMContentLoaded", function() {
 });
 
 
+//This Repo
+
+document.addEventListener('DOMContentLoaded', function() {
+    console.log("DOM fully loaded and parsed");
+
+    // Function to fetch repository information from thisrepo.txt
+    function fetchRepositoryInfo() {
+        console.log("Fetching repository information...");
+        //enter location of file. Use file thisrepo.txt
+        fetch('thisrepo.txt') // Replace with your actual URL
+            .then(response => {
+                if (!response.ok) {
+                    throw new Error('Network response was not ok');
+                }
+                return response.text();
+            })
+            .then(data => {
+                console.log("File content:", data);
+                parseRepositoryInfo(data); // Process the fetched data
+            })
+            .catch(error => {
+                console.error("Error fetching or parsing repository information:", error);
+            });
+    }
+
+    // Function to parse repository information data
+    function parseRepositoryInfo(data) {
+        const line = data.trim();
+        console.log("Parsed line:", line);
+
+        const [title_repo, link_repo] = line.split(', ').map(entry => entry.trim());
+
+        if (!title_repo || !link_repo) {
+            console.error("Invalid data format: title or link is empty");
+            return;
+        }
+
+        console.log("Title:", title_repo, "Link:", link_repo);
+        updateRepositoryLink(title_repo, link_repo);
+    }
+
+    // Function to update the repository link in the HTML
+    function updateRepositoryLink(title_repo, link_repo) {
+        const repoLink = document.querySelector('.repo-link');
+        const notebookNameLink = document.querySelector('.notebookname-link');
+
+        if (repoLink && notebookNameLink) {
+            repoLink.href = link_repo;
+            notebookNameLink.textContent = title_repo;
+            notebookNameLink.href = link_repo;
+        } else {
+            console.error("HTML elements not found");
+        }
+    }
+
+    // Fetch repository information after DOM is loaded
+    fetchRepositoryInfo();
+});
+
+
+
+// Repositories
+
 document.addEventListener('DOMContentLoaded', function() {
     console.log("DOM fully loaded and parsed");
 
     // Function to fetch repositories
     function fetchRepositories() {
         console.log("Fetching repositories...");
-        fetch('http://localhost:8000/repositories.txt')
+        // enter location of file. Use repositories.txt
+        fetch('repositories.txt')
             .then(response => response.text())
             .then(data => {
                 console.log("File content:", data);
