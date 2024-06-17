@@ -488,7 +488,7 @@ line-height: 1.5; /* Ensure vertical alignment */
 
 /* Scroll to top button styling */
 .scroll-to-top {
-display: none; / Hide by default */
+display: none; /* Hide by default */
 position: fixed;
 bottom: 20px;
 right: 20px;
@@ -513,19 +513,19 @@ opacity: 0.8;
 /* Styling for the divider line between menu options */
 .menu-divider {
 height: 1px;
-background-color: #ccc; / You can change this color as needed /
-margin: 20px 0; / 20px margin above and below */
+background-color: #ccc; /* You can change this color as needed */
+margin: 20px 0; /* 20px margin above and below */
 }
 
 /* Adjustments for menu options above and below the divider */
 .sidenav .menu-opt1-group, .sidenav .menu-opt2-group {
-padding-left: 24px; / Ensure consistency in padding /
-margin-top: 0; / Reset any additional margins */
+padding-left: 24px; /* Ensure consistency in padding */
+margin-top: 0; /* Reset any additional margins */
 }
 
 /* CSS for hover effect on li entries */
 .hovered {
-background-color: #f6f7f8; / Example background color on hover /
-color: #333; / Example text color on hover /
-/ Add any other styles for hover effect */
+background-color: #f6f7f8; /* Example background color on hover /
+color: #333; /* Example text color on hover /
+/* Add any other styles for hover effect */
 }
